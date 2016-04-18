@@ -16,6 +16,12 @@
 		CF9890AF1CC5111000BD4D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9890AD1CC5111000BD4D3E /* LaunchScreen.storyboard */; };
 		CF9890BA1CC5111000BD4D3E /* ContactListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890B91CC5111000BD4D3E /* ContactListTests.m */; };
 		CF9890C51CC5111000BD4D3E /* ContactListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890C41CC5111000BD4D3E /* ContactListUITests.m */; };
+		CF9890D41CC517F700BD4D3E /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890D31CC517F700BD4D3E /* ContactsListViewController.m */; };
+		CF9890DB1CC5197B00BD4D3E /* MBProgressHUD+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890D71CC5197B00BD4D3E /* MBProgressHUD+XMG.m */; };
+		CF9890DC1CC5197B00BD4D3E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CF9890D81CC5197B00BD4D3E /* MBProgressHUD.bundle */; };
+		CF9890DD1CC5197B00BD4D3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890DA1CC5197B00BD4D3E /* MBProgressHUD.m */; };
+		CF9890E01CC51F5700BD4D3E /* NewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890DF1CC51F5700BD4D3E /* NewContactViewController.m */; };
+		CF9890E31CC5218100BD4D3E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890E21CC5218100BD4D3E /* Contact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,17 @@
 		CF9890C01CC5111000BD4D3E /* ContactListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9890C41CC5111000BD4D3E /* ContactListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactListUITests.m; sourceTree = "<group>"; };
 		CF9890C61CC5111000BD4D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9890D21CC517F700BD4D3E /* ContactsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsListViewController.h; sourceTree = "<group>"; };
+		CF9890D31CC517F700BD4D3E /* ContactsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListViewController.m; sourceTree = "<group>"; };
+		CF9890D61CC5197B00BD4D3E /* MBProgressHUD+XMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XMG.h"; sourceTree = "<group>"; };
+		CF9890D71CC5197B00BD4D3E /* MBProgressHUD+XMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XMG.m"; sourceTree = "<group>"; };
+		CF9890D81CC5197B00BD4D3E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		CF9890D91CC5197B00BD4D3E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CF9890DA1CC5197B00BD4D3E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CF9890DE1CC51F5700BD4D3E /* NewContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewContactViewController.h; sourceTree = "<group>"; };
+		CF9890DF1CC51F5700BD4D3E /* NewContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewContactViewController.m; sourceTree = "<group>"; };
+		CF9890E11CC5218100BD4D3E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		CF9890E21CC5218100BD4D3E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +124,12 @@
 				CF9890A01CC5111000BD4D3E /* AppDelegate.m */,
 				CF9890A21CC5111000BD4D3E /* ViewController.h */,
 				CF9890A31CC5111000BD4D3E /* ViewController.m */,
+				CF9890D21CC517F700BD4D3E /* ContactsListViewController.h */,
+				CF9890D31CC517F700BD4D3E /* ContactsListViewController.m */,
+				CF9890DE1CC51F5700BD4D3E /* NewContactViewController.h */,
+				CF9890DF1CC51F5700BD4D3E /* NewContactViewController.m */,
+				CF9890E11CC5218100BD4D3E /* Contact.h */,
+				CF9890E21CC5218100BD4D3E /* Contact.m */,
 				CF9890A51CC5111000BD4D3E /* Main.storyboard */,
 				CF9890AB1CC5111000BD4D3E /* Assets.xcassets */,
 				CF9890AD1CC5111000BD4D3E /* LaunchScreen.storyboard */,
@@ -120,6 +143,7 @@
 		CF98909C1CC5111000BD4D3E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF9890D51CC5197B00BD4D3E /* MBProgressHUD */,
 				CF98909D1CC5111000BD4D3E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +165,18 @@
 				CF9890C61CC5111000BD4D3E /* Info.plist */,
 			);
 			path = ContactListUITests;
+			sourceTree = "<group>";
+		};
+		CF9890D51CC5197B00BD4D3E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CF9890D61CC5197B00BD4D3E /* MBProgressHUD+XMG.h */,
+				CF9890D71CC5197B00BD4D3E /* MBProgressHUD+XMG.m */,
+				CF9890D81CC5197B00BD4D3E /* MBProgressHUD.bundle */,
+				CF9890D91CC5197B00BD4D3E /* MBProgressHUD.h */,
+				CF9890DA1CC5197B00BD4D3E /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9890AF1CC5111000BD4D3E /* LaunchScreen.storyboard in Resources */,
+				CF9890DC1CC5197B00BD4D3E /* MBProgressHUD.bundle in Resources */,
 				CF9890AC1CC5111000BD4D3E /* Assets.xcassets in Resources */,
 				CF9890A71CC5111000BD4D3E /* Main.storyboard in Resources */,
 			);
@@ -278,8 +315,13 @@
 			files = (
 				CF9890AA1CC5111000BD4D3E /* ContactList.xcdatamodeld in Sources */,
 				CF9890A41CC5111000BD4D3E /* ViewController.m in Sources */,
+				CF9890E01CC51F5700BD4D3E /* NewContactViewController.m in Sources */,
+				CF9890D41CC517F700BD4D3E /* ContactsListViewController.m in Sources */,
 				CF9890A11CC5111000BD4D3E /* AppDelegate.m in Sources */,
+				CF9890DB1CC5197B00BD4D3E /* MBProgressHUD+XMG.m in Sources */,
 				CF98909E1CC5111000BD4D3E /* main.m in Sources */,
+				CF9890E31CC5218100BD4D3E /* Contact.m in Sources */,
+				CF9890DD1CC5197B00BD4D3E /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContactList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangsu.ContactList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContactList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangsu.ContactList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
