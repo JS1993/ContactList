@@ -13,6 +13,7 @@
 @interface ContactsListViewController ()<NewContactViewControllerDelegate,UIActionSheetDelegate,EditContactViewControllerDelegate>
 
 @property(nonatomic,strong)NSMutableArray* ContactLists;
+@property(nonatomic)int index;
 
 @end
 
@@ -48,6 +49,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Contact* con=self.ContactLists[indexPath.row];
      [self.ContactLists removeObjectAtIndex:indexPath.row];
+     self.index=(int)indexPath.row;
     [self performSegueWithIdentifier:@"editContact" sender:con];
 }
 
@@ -55,12 +57,14 @@
  *  实现协议方法
  */
 -(void)SaveContactWithNewContactViewController:(NewContactViewController*) newContactViewController andContact:(Contact*)contact{
+    
     [self.ContactLists addObject:contact];
     [self.tableView reloadData];
 }
 
 -(void)SaveEditContactWithNewContactViewController:(EditContactViewController*) editContactViewController andContact:(Contact*)contact{
-    [self.ContactLists addObject:contact];
+    //插入到原来的行中
+    [self.ContactLists insertObject:contact atIndex:self.index];
     [self.tableView reloadData];
 }
 /**
