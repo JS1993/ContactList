@@ -9,7 +9,8 @@
 #import "ContactsListViewController.h"
 #import "NewContactViewController.h"
 #import "Contact.h"
-@interface ContactsListViewController ()<NewContactViewControllerDelegate,UIActionSheetDelegate>
+#import "EditContactViewController.h"
+@interface ContactsListViewController ()<NewContactViewControllerDelegate,UIActionSheetDelegate,EditContactViewControllerDelegate>
 
 @property(nonatomic,strong)NSMutableArray* ContactLists;
 
@@ -23,6 +24,9 @@
     self.ContactLists=[NSMutableArray array];
     
     self.title=[NSString stringWithFormat:@"%@的通讯录",self.titleText];
+    
+    //取消分割线(机制啊！)
+    self.tableView.tableFooterView=[[UIView alloc]init];
 }
 
 #pragma mark - Table view data source
@@ -39,6 +43,13 @@
     cell.detailTextLabel.text=con.phone;
     return cell;
 }
+#pragma mark-tableViewDelegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Contact* con=self.ContactLists[indexPath.row];
+     [self.ContactLists removeObjectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"editContact" sender:con];
+}
 
 /**
  *  实现协议方法
@@ -48,12 +59,22 @@
     [self.tableView reloadData];
 }
 
+-(void)SaveEditContactWithNewContactViewController:(EditContactViewController*) editContactViewController andContact:(Contact*)contact{
+    [self.ContactLists addObject:contact];
+    [self.tableView reloadData];
+}
 /**
  *  设置代理
  */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NewContactViewController* new=segue.destinationViewController;
-    new.delegate=self;
+    if ([segue.identifier isEqualToString:@"newContact"]) {
+        NewContactViewController* new=segue.destinationViewController;
+        new.delegate=self;
+    }else if([segue.identifier isEqualToString:@"editContact"]){
+        EditContactViewController* editVC=segue.destinationViewController;
+        editVC.contact=sender;
+        editVC.delegate=self;
+    }
 }
 
 /**
@@ -71,6 +92,13 @@
     if (buttonIndex==0) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+/**
+ *  新建联系人事件
+ */
+- (IBAction)newContact:(UIBarButtonItem*)sender {
+    [self performSegueWithIdentifier:@"newContact" sender:nil];
 }
 
 /*

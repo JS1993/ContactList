@@ -162,15 +162,19 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="新建" id="XaP-1p-GDh">
                             <connections>
-                                <segue destination="MLU-Dx-OeZ" kind="show" id="jNt-IM-IvV"/>
+                                <action selector="newContact:" destination="HQn-bH-x1K" id="euw-0D-h8U"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="MLU-Dx-OeZ" kind="show" identifier="newContact" id="bWP-o2-Ce5"/>
+                        <segue destination="o1R-Cj-gvG" kind="show" identifier="editContact" id="zdb-o8-Gz9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44N-9Y-vAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="-368"/>
+            <point key="canvasLocation" x="996" y="-360"/>
         </scene>
         <!--新建联系人-->
         <scene sceneID="ZQQ-za-xz3">
@@ -247,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GdP-3L-sYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="-368"/>
+            <point key="canvasLocation" x="1397" y="-128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L77-Ib-G71">
@@ -267,6 +271,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIy-dm-5Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="215" y="-368"/>
+        </scene>
+        <!--编辑联系人-->
+        <scene sceneID="JKx-P4-4z8">
+            <objects>
+                <viewController id="o1R-Cj-gvG" customClass="EditContactViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NnR-H2-g2w"/>
+                        <viewControllerLayoutGuide type="bottom" id="mBC-sQ-mZ1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7vG-Go-WZc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAV-L2-Rk9">
+                                <rect key="frame" x="52" y="132" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDV-ME-bcv">
+                                <rect key="frame" x="52" y="187" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMl-XD-otk">
+                                <rect key="frame" x="112" y="183" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-Za-Q8o">
+                                <rect key="frame" x="145" y="269" width="30" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="o1R-Cj-gvG" eventType="touchUpInside" id="j5c-nC-YnH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="deu-43-Kk7">
+                                <rect key="frame" x="112" y="128" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="deu-43-Kk7" firstAttribute="top" secondItem="NnR-H2-g2w" secondAttribute="bottom" constant="64" id="0D7-Qr-ftb"/>
+                            <constraint firstItem="eMl-XD-otk" firstAttribute="leading" secondItem="tDV-ME-bcv" secondAttribute="trailing" constant="26" id="0Iy-d7-hGA"/>
+                            <constraint firstAttribute="trailing" secondItem="eMl-XD-otk" secondAttribute="trailing" constant="40" id="1sM-Ce-wwT"/>
+                            <constraint firstItem="R3d-Za-Q8o" firstAttribute="centerX" secondItem="7vG-Go-WZc" secondAttribute="centerX" id="85j-Mf-QGz"/>
+                            <constraint firstItem="TAV-L2-Rk9" firstAttribute="leading" secondItem="7vG-Go-WZc" secondAttribute="leading" constant="52" id="86w-7T-7jV"/>
+                            <constraint firstAttribute="trailing" secondItem="deu-43-Kk7" secondAttribute="trailing" constant="40" id="AYQ-fN-zlh"/>
+                            <constraint firstItem="deu-43-Kk7" firstAttribute="leading" secondItem="TAV-L2-Rk9" secondAttribute="trailing" constant="26" id="PnI-IG-5TU"/>
+                            <constraint firstItem="eMl-XD-otk" firstAttribute="top" secondItem="deu-43-Kk7" secondAttribute="bottom" constant="25" id="RkS-VW-v0a"/>
+                            <constraint firstItem="TAV-L2-Rk9" firstAttribute="top" secondItem="NnR-H2-g2w" secondAttribute="bottom" constant="68" id="UgO-OR-TIU"/>
+                            <constraint firstItem="R3d-Za-Q8o" firstAttribute="centerY" secondItem="7vG-Go-WZc" secondAttribute="centerY" id="VAH-Pe-PGS"/>
+                            <constraint firstItem="tDV-ME-bcv" firstAttribute="leading" secondItem="7vG-Go-WZc" secondAttribute="leading" constant="52" id="a2H-62-riI"/>
+                            <constraint firstItem="tDV-ME-bcv" firstAttribute="top" secondItem="TAV-L2-Rk9" secondAttribute="bottom" constant="34" id="gzx-Jc-8Ik"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="编辑联系人" id="sn7-zt-GSu">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="MiX-RW-wpZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="taF-7T-4gr">
+                            <connections>
+                                <action selector="editAction:" destination="o1R-Cj-gvG" id="PY3-Y5-o5U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="editButton" destination="taF-7T-4gr" id="ucF-8j-cOa"/>
+                        <outlet property="nameTF" destination="deu-43-Kk7" id="xrd-Lt-jbe"/>
+                        <outlet property="phoneTF" destination="eMl-XD-otk" id="wml-bC-cx2"/>
+                        <outlet property="saveButton" destination="R3d-Za-Q8o" id="UE7-ZG-cfd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IpF-Nn-wup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="-740"/>
         </scene>
     </scenes>
 </document>

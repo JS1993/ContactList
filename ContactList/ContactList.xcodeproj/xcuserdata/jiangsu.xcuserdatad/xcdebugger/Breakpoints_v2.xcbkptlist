@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ContactList/ContactsListViewController.m"
-            timestampString = "482681938.965051"
+            timestampString = "482684484.547554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "-SaveContactWithNewContactViewController:andContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ContactList/ContactsListViewController.m"
-            timestampString = "482681940.847501"
+            timestampString = "482684484.547554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "-SaveContactWithNewContactViewController:andContact:"
             landmarkType = "5">
          </BreakpointContent>

@@ -22,6 +22,7 @@
 		CF9890DD1CC5197B00BD4D3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890DA1CC5197B00BD4D3E /* MBProgressHUD.m */; };
 		CF9890E01CC51F5700BD4D3E /* NewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890DF1CC51F5700BD4D3E /* NewContactViewController.m */; };
 		CF9890E31CC5218100BD4D3E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890E21CC5218100BD4D3E /* Contact.m */; };
+		CF9890E61CC527E500BD4D3E /* EditContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9890E51CC527E500BD4D3E /* EditContactViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		CF9890DF1CC51F5700BD4D3E /* NewContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewContactViewController.m; sourceTree = "<group>"; };
 		CF9890E11CC5218100BD4D3E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		CF9890E21CC5218100BD4D3E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		CF9890E41CC527E500BD4D3E /* EditContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditContactViewController.h; sourceTree = "<group>"; };
+		CF9890E51CC527E500BD4D3E /* EditContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditContactViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				CF9890D31CC517F700BD4D3E /* ContactsListViewController.m */,
 				CF9890DE1CC51F5700BD4D3E /* NewContactViewController.h */,
 				CF9890DF1CC51F5700BD4D3E /* NewContactViewController.m */,
+				CF9890E41CC527E500BD4D3E /* EditContactViewController.h */,
+				CF9890E51CC527E500BD4D3E /* EditContactViewController.m */,
 				CF9890E11CC5218100BD4D3E /* Contact.h */,
 				CF9890E21CC5218100BD4D3E /* Contact.m */,
 				CF9890A51CC5111000BD4D3E /* Main.storyboard */,
@@ -322,6 +327,7 @@
 				CF98909E1CC5111000BD4D3E /* main.m in Sources */,
 				CF9890E31CC5218100BD4D3E /* Contact.m in Sources */,
 				CF9890DD1CC5197B00BD4D3E /* MBProgressHUD.m in Sources */,
+				CF9890E61CC527E500BD4D3E /* EditContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
