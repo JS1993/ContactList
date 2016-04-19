@@ -10,6 +10,8 @@
 #import "ContactsListViewController.h"
 #import "MBProgressHUD+XMG.h"
 
+#define userDefaults [NSUserDefaults standardUserDefaults]
+
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *userNameTF;
 @property (strong, nonatomic) IBOutlet UITextField *userKeyTF;
@@ -21,8 +23,29 @@
 
 @implementation ViewController
 
+static NSString* userName=@"userName";
+static NSString* userKey=@"userKey";
+static NSString* autoLog=@"autoLogin";
+static NSString* remK=@"remKey";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString* account=[userDefaults objectForKey:userName];
+    NSString* key=[userDefaults objectForKey:userKey];
+    BOOL autoLogin=[userDefaults boolForKey:autoLog];
+    BOOL remKey=[userDefaults boolForKey:remK];
+    
+    self.saveKey.on=remKey;
+    self.autoLogin.on=autoLogin;
+    
+    if (remKey) {
+        self.userNameTF.text=account;
+        self.userKeyTF.text=key;
+    }
+    if (autoLogin) {
+        [self login:nil];
+    }
     [self.userNameTF addTarget:self action:@selector(checkCharacters) forControlEvents:UIControlEventEditingChanged];
     [self.userKeyTF addTarget:self action:@selector(checkCharacters) forControlEvents:UIControlEventEditingChanged];
     
@@ -48,6 +71,12 @@
         [MBProgressHUD hideHUD];
         //判断用户名和密码匹配
         if ([self.userNameTF.text isEqualToString:@"jiangsu"]&&[self.userKeyTF.text isEqualToString:@"123"]) {
+            
+            [userDefaults setObject:self.userNameTF.text forKey:userName];
+            [userDefaults setObject:self.userKeyTF.text forKey:userKey];
+            [userDefaults setBool:self.saveKey.on forKey:remK];
+            [userDefaults setBool:self.autoLogin.on forKey:autoLog];
+            
             [self performSegueWithIdentifier:@"goToContactVc" sender:nil];
         }else{
             [MBProgressHUD showError:@"用户名或密码错误"];
@@ -55,6 +84,7 @@
     });
     
 }
+
 
 /**
  *  执行跳转
