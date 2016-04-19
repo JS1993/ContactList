@@ -10,6 +10,8 @@
 #import "NewContactViewController.h"
 #import "Contact.h"
 #import "EditContactViewController.h"
+
+#define  filePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"contactList.data"]
 @interface ContactsListViewController ()<NewContactViewControllerDelegate,UIActionSheetDelegate,EditContactViewControllerDelegate>
 
 @property(nonatomic,strong)NSMutableArray* ContactLists;
@@ -19,10 +21,19 @@
 
 @implementation ContactsListViewController
 
+-(NSMutableArray *)ContactLists{
+    if (_ContactLists==nil) {
+        
+        _ContactLists=[NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        if (_ContactLists==nil) {
+            _ContactLists=[NSMutableArray array];
+        }
+    }
+    return _ContactLists;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.ContactLists=[NSMutableArray array];
     
     self.title=[NSString stringWithFormat:@"%@的通讯录",self.titleText];
     
@@ -59,12 +70,19 @@
 -(void)SaveContactWithNewContactViewController:(NewContactViewController*) newContactViewController andContact:(Contact*)contact{
     
     [self.ContactLists addObject:contact];
-    [self.tableView reloadData];
+    
+    
+    [NSKeyedArchiver archiveRootObject:self.ContactLists toFile:filePath];
+    
+    [self.tableView reloadData];;
 }
 
 -(void)SaveEditContactWithNewContactViewController:(EditContactViewController*) editContactViewController andContact:(Contact*)contact{
     //插入到原来的行中
     [self.ContactLists insertObject:contact atIndex:self.index];
+
+    [NSKeyedArchiver archiveRootObject:self.ContactLists toFile:filePath];
+    
     [self.tableView reloadData];
 }
 /**
