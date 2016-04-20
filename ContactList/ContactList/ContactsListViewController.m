@@ -41,10 +41,12 @@
     self.tableView.tableFooterView=[[UIView alloc]init];
 }
 
+//编辑按钮
 - (IBAction)editButton:(UIBarButtonItem *)sender {
-    //点击编辑之后变成完成
+        //打开编辑状态
         [self.tableView setEditing:!self.tableView.editing animated:YES];
         if (self.tableView.editing) {
+            //点击编辑之后变成完成
             sender.title=@"完成";
         }else{
             sender.title=@"编辑";
@@ -152,14 +154,24 @@
     }   
 }
 
-// Override to support rearranging the table view.
+
+//移动联系人功能
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     
+    Contact* con=self.ContactLists[fromIndexPath.row];
+    
+    [self.ContactLists removeObjectAtIndex:fromIndexPath.row];
+    
+    [self.ContactLists insertObject:con atIndex:toIndexPath.row];
+    
+    [NSKeyedArchiver archiveRootObject:self.ContactLists toFile:filePath];
+    
+    [self.tableView reloadData];
 }
 
-// Override to support conditional rearranging of the table view.
+// 打开移动功能
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
+
     return YES;
 }
 
