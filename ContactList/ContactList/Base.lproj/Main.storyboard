@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--通讯录-->
@@ -160,11 +161,18 @@
                                 <action selector="cancelAction:" destination="HQn-bH-x1K" id="4WU-0D-OyI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="新建" id="XaP-1p-GDh">
-                            <connections>
-                                <action selector="newContact:" destination="HQn-bH-x1K" id="euw-0D-h8U"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="新建" id="XaP-1p-GDh">
+                                <connections>
+                                    <action selector="newContact:" destination="HQn-bH-x1K" id="euw-0D-h8U"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="编辑" id="0L8-QR-ekR">
+                                <connections>
+                                    <action selector="editButton:" destination="HQn-bH-x1K" id="FZ6-7M-QD5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
