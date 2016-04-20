@@ -175,6 +175,28 @@
     return YES;
 }
 
+//自定义左划的编辑事件
+-(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewRowAction* action1=[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self.ContactLists removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [NSKeyedArchiver archiveRootObject:self.ContactLists toFile:filePath];
+        [self.tableView reloadData];
+    }];
+    
+    UITableViewRowAction* action2=[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"添加" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self newContact:nil];
+    }];
+    action2.backgroundColor=[UIColor greenColor];
+    //只有最后一行才会出现添加按钮
+    if (indexPath.row==self.ContactLists.count-1) {
+        return @[action2,action1];
+    }else{
+        return @[action1];
+    }
+    
+}
 /*
 #pragma mark - Navigation
 
