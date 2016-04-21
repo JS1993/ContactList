@@ -553,6 +553,7 @@
 				CF9890CB1CC5111000BD4D3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF9890CC1CC5111000BD4D3E /* Build configuration list for PBXNativeTarget "ContactListTests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +562,7 @@
 				CF9890CE1CC5111000BD4D3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF9890CF1CC5111000BD4D3E /* Build configuration list for PBXNativeTarget "ContactListUITests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +571,7 @@
 				CF9890D11CC5111000BD4D3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
