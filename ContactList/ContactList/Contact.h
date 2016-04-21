@@ -13,4 +13,5 @@
 @property(copy,nonatomic)NSString* name;
 @property(copy,nonatomic)NSString* phone;
 
+@property(nonatomic,assign)BOOL Hidden;
 @end

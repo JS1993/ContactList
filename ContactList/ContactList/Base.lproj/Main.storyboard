@@ -156,18 +156,26 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="通讯录" id="V44-j7-Bk3">
                         <barButtonItem key="backBarButtonItem" title="返回" id="4QU-x1-nz6"/>
-                        <barButtonItem key="leftBarButtonItem" title="注销" id="Vbw-ik-YTD">
-                            <connections>
-                                <action selector="cancelAction:" destination="HQn-bH-x1K" id="4WU-0D-OyI"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="注销" id="Vbw-ik-YTD">
+                                <connections>
+                                    <action selector="cancelAction:" destination="HQn-bH-x1K" id="4WU-0D-OyI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" title="删除" id="Sqh-2n-yvs">
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="removeBarButton:" destination="HQn-bH-x1K" id="u1m-8g-GhT"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem title="新建" id="XaP-1p-GDh">
                                 <connections>
                                     <action selector="newContact:" destination="HQn-bH-x1K" id="euw-0D-h8U"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="编辑" id="0L8-QR-ekR">
+                            <barButtonItem title="多选" id="0L8-QR-ekR">
                                 <connections>
                                     <action selector="editButton:" destination="HQn-bH-x1K" id="FZ6-7M-QD5"/>
                                 </connections>
@@ -176,6 +184,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="editBarButton" destination="0L8-QR-ekR" id="60f-3X-5Zf"/>
+                        <outlet property="removeBarButton" destination="Sqh-2n-yvs" id="8zc-ei-F59"/>
                         <segue destination="MLU-Dx-OeZ" kind="show" identifier="newContact" id="bWP-o2-Ce5"/>
                         <segue destination="o1R-Cj-gvG" kind="show" identifier="editContact" id="zdb-o8-Gz9"/>
                     </connections>

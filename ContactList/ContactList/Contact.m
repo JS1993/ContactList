@@ -14,6 +14,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:_name forKey:@"name"];
     [aCoder encodeObject:_phone forKey:@"phone"];
+    [aCoder encodeBool:_Hidden forKey:@"Hidden"];
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -21,6 +22,7 @@
     if (self=[super init]) {
         _name=[aDecoder decodeObjectForKey:@"name"];
         _phone=[aDecoder decodeObjectForKey:@"phone"];
+        _Hidden=[aDecoder decodeObjectForKey:@"Hidden"];
     }
     return self;
 }
