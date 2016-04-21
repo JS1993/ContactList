@@ -12,6 +12,7 @@
 #import "EditContactViewController.h"
 
 #define  filePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"contactList.data"]
+
 @interface ContactsListViewController ()<NewContactViewControllerDelegate,UIActionSheetDelegate,EditContactViewControllerDelegate>
 
 @property(nonatomic,strong)NSMutableArray* ContactLists;
@@ -53,6 +54,12 @@
     [self.tableView setEditing:!self.tableView.editing animated:YES];
     
     [self checkEditButton];
+    
+    //如果此时关闭了编辑状态，需要刷新一次（主要为了解决移动联系人问题）
+    if (!self.tableView.editing) {
+        
+        [self.tableView reloadData];
+    }
 }
 
 //更新编辑按钮的状态
@@ -62,7 +69,7 @@
         self.editBarButton.title=@"取消";
         self.removeBarButton.enabled=YES;
     }else{
-        self.editBarButton.title=@"多选";
+        self.editBarButton.title=@"编辑";
         self.removeBarButton.enabled=NO;
     }
 }
@@ -212,7 +219,6 @@
     
     [NSKeyedArchiver archiveRootObject:self.ContactLists toFile:filePath];
     
-    [self.tableView reloadData];
 }
 
 // 打开移动功能
